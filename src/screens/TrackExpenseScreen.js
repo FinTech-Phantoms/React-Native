@@ -1,7 +1,19 @@
 import React from 'react';
-import {View, StyleSheet, Text, useColorScheme} from 'react-native';
+import {View, StyleSheet, Text, useColorScheme, FlatList} from 'react-native';
 import colors from '../../assests/colors';
-
+import MoneyCard from '../components/moneyCard/MoneyCard';
+var data = [
+  {id: 1},
+  {id: 2},
+  {id: 3},
+  {id: 4},
+  {id: 5},
+  {id: 6},
+  {id: 7},
+  {id: 8},
+  {id: 9},
+  {id: 10},
+];
 const TrackExpenseScreen = () => {
   var isDarkMode = useColorScheme() === 'dark';
   return (
@@ -11,10 +23,13 @@ const TrackExpenseScreen = () => {
           ? colors.darkbackground
           : colors.lightbackground,
         flex: 1,
+        alignItems: 'center',
       }}>
-      <Text style={{color: isDarkMode ? colors.darkText : colors.lightText}}>
-        TrackExpenseScreen
-      </Text>
+      <FlatList
+        data={data}
+        numColumns={2}
+        renderItem={({item}) => <MoneyCard />}
+      />
     </View>
   );
 };

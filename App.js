@@ -13,12 +13,14 @@ import {
   useColorScheme,
   View,
   SafeAreaView,
+  FlatList,
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import colors from './assests/colors';
 import PendingBillsScreen from './src/screens/PendingBillsScreen';
 import MainNavigator from './src/navigation/index';
+import MoneyCard from './src/components/moneyCard/MoneyCard';
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -38,6 +40,7 @@ const App = () => {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
+
       {/* <PendingBillsScreen /> */}
       <MainNavigator />
     </SafeAreaView>
