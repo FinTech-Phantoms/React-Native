@@ -7,28 +7,53 @@ import {
   TouchableNativeFeedback,
 } from 'react-native';
 import colors from '../../../assests/colors';
+import {useColorScheme} from 'react-native';
 
 const MoneyCard = () => {
+  var isDarkMode = useColorScheme() === 'dark';
   return (
-    <View style={styles.rootContainer}>
-      {/* <View style={{flex: 1}}> */}
+    <View
+      style={[
+        styles.rootContainer,
+        {
+          shadowColor: isDarkMode ? '#fff' : '#000',
+          backgroundColor: isDarkMode ? '#000' : '#fff',
+        },
+      ]}>
       <View style={styles.headContainer}>
         <Text style={styles.title}>Wells Frago Checking</Text>
-        <Text style={styles.money}>$17,053.99</Text>
+        <Text
+          style={[
+            styles.money,
+            {
+              color: isDarkMode ? colors.white : colors.darkText,
+            },
+          ]}>
+          $17,053.99
+        </Text>
       </View>
       <View style={{flex: 0.3, overflow: 'hidden'}}>
         <TouchableNativeFeedback
           onPress={() => {
             console.warn('hi');
           }}
-          background={TouchableNativeFeedback.Ripple('whitesmoke', true)}>
-          <View style={[styles.footContainer]}>
+          background={TouchableNativeFeedback.Ripple(
+            isDarkMode ? '#3b3939' : 'whitesmoke',
+            true,
+          )}>
+          <View
+            style={[
+              styles.footContainer,
+              {
+                overflow: 'hidden',
+                borderTopColor: isDarkMode ? 'gray' : '#ccc',
+              },
+            ]}>
             <Text style={styles.viewDetailsBtn}>View Details</Text>
           </View>
         </TouchableNativeFeedback>
       </View>
     </View>
-    // </View>
   );
 };
 
@@ -37,11 +62,9 @@ const styles = StyleSheet.create({
     zIndex: 1,
     borderRadius: 6,
     height: 200,
-    backgroundColor: 'white',
     width: 180,
     marginVertical: 10,
     marginHorizontal: 5,
-    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -61,14 +84,12 @@ const styles = StyleSheet.create({
     color: 'gray',
   },
   money: {
-    color: 'black',
     fontWeight: 'bold',
     fontSize: 22,
   },
   footContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    borderTopColor: '#ccc',
     borderTopWidth: 1,
     overflow: 'hidden',
     flex: 1,

@@ -3,12 +3,13 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 export default {
   red: 'red',
   orange: 'orange',
-  black: 'black',
+  black: '#000',
   blue: 'royalblue',
-  lightbackground: 'white',
-  darkbackground: 'black',
+  lightbackground: '#fff',
+  darkbackground: '#121112',
   lightHeaders: Colors.lighter,
   darkHeaders: Colors.darker,
-  lightText: 'black',
-  darkText: 'white',
+  lightText: '#000',
+  darkText: '#ffff',
+  white: '#fff',
 };
