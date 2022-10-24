@@ -8,6 +8,8 @@ import colors from '../../assests/colors';
 import {Text, useColorScheme} from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {useNavigation} from '@react-navigation/native';
+import TrackExpenseNavigator from './TrackExpenseNavigator';
+// import TrackExpenseNavigator from './TrackExpenseNavigator';
 
 const BottomTab = createBottomTabNavigator();
 const TabNavigator = () => {
@@ -41,20 +43,23 @@ const TabNavigator = () => {
       />
       <BottomTab.Screen
         name="track-expense"
-        component={TrackExpenseScreen}
+        component={TrackExpenseNavigator}
         options={{
-          headerRight: () => (
-            <Entypo
-              onPress={() => navigation.navigate('create-new-expense')}
-              name="new-message"
-              color={'royalblue'}
-              size={18}
-              style={{
-                marginRight: 20,
-              }}
-            />
-          ),
+          headerShown: false,
         }}
+        // options={{
+        //   headerRight: () => (
+        //     <Entypo
+        //       onPress={() => navigation.navigate('create-new-expense')}
+        //       name="new-message"
+        //       color={'royalblue'}
+        //       size={18}
+        //       style={{
+        //         marginRight: 20,
+        //       }}
+        //     />
+        //   ),
+        // }}
       />
     </BottomTab.Navigator>
   );

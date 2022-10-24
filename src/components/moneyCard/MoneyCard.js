@@ -8,9 +8,11 @@ import {
 } from 'react-native';
 import colors from '../../../assests/colors';
 import {useColorScheme} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 const MoneyCard = () => {
   var isDarkMode = useColorScheme() === 'dark';
+  const navigation = useNavigation();
   return (
     <View
       style={[
@@ -26,7 +28,7 @@ const MoneyCard = () => {
           style={[
             styles.money,
             {
-              color: isDarkMode ? colors.white : colors.darkText,
+              color: isDarkMode ? colors.white : colors.lightText,
             },
           ]}>
           $17,053.99
@@ -35,7 +37,7 @@ const MoneyCard = () => {
       <View style={{flex: 0.3, overflow: 'hidden'}}>
         <TouchableNativeFeedback
           onPress={() => {
-            console.warn('hi');
+            navigation.navigate('view-expense-details');
           }}
           background={TouchableNativeFeedback.Ripple(
             isDarkMode ? '#3b3939' : 'whitesmoke',
