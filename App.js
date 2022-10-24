@@ -29,7 +29,9 @@ const App = () => {
   return (
     <SafeAreaView
       style={{
-        backgroundColor: isDarkMode ? Colors.darker : colors.lightbackground,
+        backgroundColor: isDarkMode
+          ? colors.darkbackground
+          : colors.lightbackground,
         flex: 1,
       }}>
       <StatusBar

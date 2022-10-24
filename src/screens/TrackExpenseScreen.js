@@ -1,10 +1,20 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, useColorScheme} from 'react-native';
+import colors from '../../assests/colors';
 
 const TrackExpenseScreen = () => {
+  var isDarkMode = useColorScheme() === 'dark';
   return (
-    <View>
-      <Text>Track Expense</Text>
+    <View
+      style={{
+        backgroundColor: isDarkMode
+          ? colors.darkbackground
+          : colors.lightbackground,
+        flex: 1,
+      }}>
+      <Text style={{color: isDarkMode ? colors.darkText : colors.lightText}}>
+        TrackExpenseScreen
+      </Text>
     </View>
   );
 };
