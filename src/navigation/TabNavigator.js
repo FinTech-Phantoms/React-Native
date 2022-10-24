@@ -21,6 +21,14 @@ const TabNavigator = () => {
         headerTitleStyle: {
           color: isDarkMode ? colors.darkText : colors.lightText,
         },
+        tabBarStyle: {
+          backgroundColor: isDarkMode
+            ? colors.darkHeaders
+            : colors.lightHeaders,
+        },
+        tabBarInactiveTintColor: isDarkMode
+          ? colors.darkText
+          : colors.lightText,
       }}>
       <BottomTab.Screen name="credits" component={CreditScoreScreen} />
       <BottomTab.Screen name="pending-bills" component={PendingBillsScreen} />
