@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import TabNavigator from './TabNavigator';
 import CreateNewExpenseScreen from '../screens/CreateNewExpenseScreen';
+import colors from '../../assests/colors';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,9 +14,13 @@ const MainNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
-          // statusBarStyle: isDarkMode ? 'dark' : 'light',
           headerStyle: {
-            // backgroundColor: isDarkMode ? Colors.darker : colors.lightHeaders,
+            backgroundColor: isDarkMode
+              ? colors.darkHeaders
+              : colors.lightHeaders,
+          },
+          headerTitleStyle: {
+            color: isDarkMode ? colors.darkText : colors.lightText,
           },
         }}>
         <Stack.Screen

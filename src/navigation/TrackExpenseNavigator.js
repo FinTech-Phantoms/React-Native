@@ -4,12 +4,25 @@ import TrackExpenseScreen from '../screens/TrackExpenseScreen';
 import {useNavigation} from '@react-navigation/native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import ExpenseDetailsScreen from '../screens/ExpenseDetailsScreen';
+import {useColorScheme} from 'react-native';
+import colors from '../../assests/colors';
 
 const Stack = createNativeStackNavigator();
 const TrackExpenseNavigator = () => {
+  var isDarkMode = useColorScheme() === 'dark';
   const navigation = useNavigation();
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: isDarkMode
+            ? colors.darkHeaders
+            : colors.lightHeaders,
+        },
+        headerTitleStyle: {
+          color: isDarkMode ? colors.darkText : colors.lightText,
+        },
+      }}>
       <Stack.Screen
         name="track-expense-home"
         component={TrackExpenseScreen}
