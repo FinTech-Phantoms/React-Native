@@ -8,7 +8,7 @@ export default {
   lightbackground: 'white',
   darkbackground: 'black',
   lightHeaders: Colors.lighter,
-  darkHeaders: 'black',
+  darkHeaders: Colors.darker,
   lightText: 'black',
   darkText: 'white',
 };

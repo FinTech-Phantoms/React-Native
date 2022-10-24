@@ -1,21 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import CreditScoreScreen from '../screens/CreditScoreScreen';
 import PendingBillsScreen from '../screens/PendingBillsScreen';
 import SubscriptionManagementScreen from '../screens/SubscriptionManagementScreen';
 import TrackExpenseScreen from '../screens/TrackExpenseScreen';
 import colors from '../../assests/colors';
+import {useColorScheme} from 'react-native';
 
 const BottomTab = createBottomTabNavigator();
 const TabNavigator = () => {
+  var isDarkMode = useColorScheme() === 'dark';
   return (
     <BottomTab.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: colors.lightHeaders,
+          backgroundColor: isDarkMode
+            ? colors.darkHeaders
+            : colors.lightHeaders,
         },
         headerTitleStyle: {
-          color: colors.black,
+          color: isDarkMode ? colors.darkText : colors.lightText,
         },
       }}>
       <BottomTab.Screen name="credits" component={CreditScoreScreen} />
