@@ -3,6 +3,7 @@ import {View, StyleSheet, Text, useColorScheme, StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import TabNavigator from './TabNavigator';
+import CreateNewExpenseScreen from '../screens/CreateNewExpenseScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,10 @@ const MainNavigator = () => {
           options={{
             headerShown: false,
           }}
+        />
+        <Stack.Screen
+          name="create-new-expense"
+          component={CreateNewExpenseScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

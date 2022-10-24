@@ -5,10 +5,13 @@ import PendingBillsScreen from '../screens/PendingBillsScreen';
 import SubscriptionManagementScreen from '../screens/SubscriptionManagementScreen';
 import TrackExpenseScreen from '../screens/TrackExpenseScreen';
 import colors from '../../assests/colors';
-import {useColorScheme} from 'react-native';
+import {Text, useColorScheme} from 'react-native';
+import Entypo from 'react-native-vector-icons/Entypo';
+import {useNavigation} from '@react-navigation/native';
 
 const BottomTab = createBottomTabNavigator();
 const TabNavigator = () => {
+  const navigation = useNavigation();
   var isDarkMode = useColorScheme() === 'dark';
   return (
     <BottomTab.Navigator
@@ -36,7 +39,23 @@ const TabNavigator = () => {
         name="subscriptions"
         component={SubscriptionManagementScreen}
       />
-      <BottomTab.Screen name="track-expense" component={TrackExpenseScreen} />
+      <BottomTab.Screen
+        name="track-expense"
+        component={TrackExpenseScreen}
+        options={{
+          headerRight: () => (
+            <Entypo
+              onPress={() => navigation.navigate('create-new-expense')}
+              name="new-message"
+              color={'royalblue'}
+              size={18}
+              style={{
+                marginRight: 20,
+              }}
+            />
+          ),
+        }}
+      />
     </BottomTab.Navigator>
   );
 };
