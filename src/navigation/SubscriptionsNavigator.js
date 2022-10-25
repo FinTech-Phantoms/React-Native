@@ -2,7 +2,7 @@ import React from 'react';
 import {useColorScheme} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import ActiveSubscriptionsScreen from '../screens/subscriptions/ActiveSubscriptionsScreen';
-import SubscriptionManagementScreen from '../screens/SubscriptionManagementScreen';
+import SubscriptionManagementScreen from '../screens/subscriptions/SubscriptionManagementScreen';
 import colors from '../../assests/colors';
 
 const Stack = createNativeStackNavigator();

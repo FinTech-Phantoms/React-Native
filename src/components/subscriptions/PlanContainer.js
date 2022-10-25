@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderTopLeftRadius: 0,
     padding: 10,
+    margin: 10,
     justifyContent: 'space-evenly',
     shadowColor: '#000',
     shadowOffset: {

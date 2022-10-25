@@ -1,16 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import CreditScoreScreen from '../screens/CreditScoreScreen';
 import PendingBillsScreen from '../screens/PendingBillsScreen';
-import SubscriptionManagementScreen from '../screens/SubscriptionManagementScreen';
-import TrackExpenseScreen from '../screens/TrackExpenseScreen';
 import colors from '../../assests/colors';
-import {Text, useColorScheme} from 'react-native';
-import Entypo from 'react-native-vector-icons/Entypo';
+import {useColorScheme} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import TrackExpenseNavigator from './TrackExpenseNavigator';
 import SubscriptionsNavigator from './SubscriptionsNavigator';
-// import TrackExpenseNavigator from './TrackExpenseNavigator';
 
 const BottomTab = createBottomTabNavigator();
 const TabNavigator = () => {

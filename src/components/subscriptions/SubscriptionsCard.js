@@ -1,8 +1,27 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image, ScrollView} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  ScrollView,
+  FlatList,
+} from 'react-native';
 import PlanContainer from './PlanContainer';
 import Feather from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
+var data = [
+  {id: 1},
+  {id: 2},
+  {id: 3},
+  {id: 4},
+  {id: 5},
+  {id: 6},
+  {id: 7},
+  {id: 8},
+  {id: 9},
+  {id: 10},
+];
 const SubscriptionsCard = () => {
   const navigation = useNavigation();
   return (
@@ -23,9 +42,12 @@ const SubscriptionsCard = () => {
         />
       </View>
       <View style={styles.bottomRow}>
-        {[0, 0].map((el, ind) => (
-          <PlanContainer key={ind} />
-        ))}
+        <FlatList
+          data={data}
+          // numColumns={2}
+          renderItem={({item}) => <PlanContainer />}
+          horizontal={true}
+        />
       </View>
     </View>
   );
@@ -38,7 +60,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     borderRadius: 20,
     borderTopLeftRadius: 0,
-    padding: 20,
+    padding: 10,
   },
   topRow: {
     flexDirection: 'row',
