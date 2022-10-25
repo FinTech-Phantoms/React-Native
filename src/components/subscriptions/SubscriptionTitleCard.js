@@ -10,6 +10,7 @@ const SubscriptionTitleCard = () => {
           style={{
             flex: 0.6,
             marginVertical: 20,
+            justifyContent: 'center',
           }}>
           <Text style={styles.offerSubTitle}>Offer of the day</Text>
           <Text style={styles.offerTitle}>Apple Music 50% off</Text>
@@ -36,7 +37,7 @@ const SubscriptionTitleCard = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0.4,
+    flex: 0.5,
     overflow: 'hidden',
     borderRadius: 20,
     borderBottomLeftRadius: 0,
