@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Text, useColorScheme} from 'react-native';
+import SubscriptionTitleCard from '../components/subscriptionTitleCard/SubscriptionTitleCard';
 import colors from '../../assests/colors';
 
 const SubscriptionManagementScreen = () => {
@@ -11,10 +12,9 @@ const SubscriptionManagementScreen = () => {
           ? colors.darkbackground
           : colors.lightbackground,
         flex: 1,
+        padding: 20,
       }}>
-      <Text style={{color: isDarkMode ? colors.darkText : colors.lightText}}>
-        SubscriptionManagementScreen
-      </Text>
+      <SubscriptionTitleCard />
     </View>
   );
 };
