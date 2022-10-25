@@ -9,6 +9,7 @@ import {Text, useColorScheme} from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {useNavigation} from '@react-navigation/native';
 import TrackExpenseNavigator from './TrackExpenseNavigator';
+import SubscriptionsNavigator from './SubscriptionsNavigator';
 // import TrackExpenseNavigator from './TrackExpenseNavigator';
 
 const BottomTab = createBottomTabNavigator();
@@ -39,7 +40,8 @@ const TabNavigator = () => {
       <BottomTab.Screen name="pending-bills" component={PendingBillsScreen} />
       <BottomTab.Screen
         name="subscriptions"
-        component={SubscriptionManagementScreen}
+        component={SubscriptionsNavigator}
+        options={{headerShown: false}}
       />
       <BottomTab.Screen
         name="track-expense"

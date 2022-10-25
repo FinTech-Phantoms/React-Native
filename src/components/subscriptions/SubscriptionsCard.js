@@ -1,15 +1,26 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image, ScrollView} from 'react-native';
 import PlanContainer from './PlanContainer';
-
+import Feather from 'react-native-vector-icons/Feather';
+import {useNavigation} from '@react-navigation/native';
 const SubscriptionsCard = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.rootContainer}>
       <View style={styles.topRow}>
-        <Text style={styles.activeTitle}>My Active</Text>
-        <View style={styles.numOfActiveContainer}>
-          <Text style={styles.numOfActive}>9</Text>
+        <View style={styles.activeContainer}>
+          <Text style={styles.activeTitle}>My Active</Text>
+          <View style={styles.numOfActiveContainer}>
+            <Text style={styles.numOfActive}>9</Text>
+          </View>
         </View>
+        <Feather
+          name="arrow-up-right"
+          size={25}
+          onPress={() => {
+            navigation.navigate('my-active-subscriptions');
+          }}
+        />
       </View>
       <View style={styles.bottomRow}>
         {[0, 0].map((el, ind) => (
@@ -33,6 +44,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 30,
+    justifyContent: 'space-between',
+  },
+  activeContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   activeTitle: {fontSize: 30, fontWeight: 'bold', color: 'black'},
 
