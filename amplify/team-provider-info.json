@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fintech-staging-171025-authRole",
+      "UnauthRoleArn": "arn:aws:iam::266006187735:role/amplify-fintech-staging-171025-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::266006187735:role/amplify-fintech-staging-171025-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-fintech-staging-171025-deployment",
+      "UnauthRoleName": "amplify-fintech-staging-171025-unauthRole",
+      "StackName": "amplify-fintech-staging-171025",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:266006187735:stack/amplify-fintech-staging-171025/ead1a780-5487-11ed-8ebb-0e3fab9bc4d7",
+      "AmplifyAppId": "d3cc9k3iyr14v9"
+    },
+    "categories": {
+      "auth": {
+        "FinTech": {}
+      }
+    }
+  }
+}
