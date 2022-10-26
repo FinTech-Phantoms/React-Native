@@ -1,35 +1,50 @@
 import React from 'react';
-import {View, StyleSheet, Image, Text} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  TouchableNativeFeedback,
+} from 'react-native';
 
 const PlanContainer = () => {
   return (
     <View style={styles.rootContainer}>
-      <View style={styles.priceContainer}>
-        <Image
-          source={{
-            uri: 'https://www.scdn.co/i/_global/twitter_card-default.jpg',
-          }}
-          style={styles.appLogo}
-        />
-        <View>
-          <Text style={styles.offerPrice}>$0.99</Text>
-          <Text style={{padding: 0, marginTop: -5}}>/mo</Text>
+      <TouchableNativeFeedback style={{overflow: 'hidden'}}>
+        <View
+          style={{
+            flex: 1,
+            padding: 10,
+            justifyContent: 'space-evenly',
+          }}>
+          <View style={styles.priceContainer}>
+            <Image
+              source={{
+                uri: 'https://www.scdn.co/i/_global/twitter_card-default.jpg',
+              }}
+              style={styles.appLogo}
+            />
+            <View>
+              <Text style={styles.offerPrice}>$0.99</Text>
+              <Text style={{padding: 0, marginTop: -5}}>/mo</Text>
+            </View>
+          </View>
+          <View>
+            <Text style={{color: 'black', fontSize: 17, fontWeight: 'bold'}}>
+              Learn English
+            </Text>
+            <Text style={{fontSize: 13}}>Premium</Text>
+          </View>
+          <Text
+            style={{
+              color: 'black',
+              fontSize: 15,
+              fontWeight: 'bold',
+            }}>
+            5 days left
+          </Text>
         </View>
-      </View>
-      <View>
-        <Text style={{color: 'black', fontSize: 17, fontWeight: 'bold'}}>
-          Learn English
-        </Text>
-        <Text style={{fontSize: 13}}>Premium</Text>
-      </View>
-      <Text
-        style={{
-          color: 'black',
-          fontSize: 15,
-          fontWeight: 'bold',
-        }}>
-        5 days left
-      </Text>
+      </TouchableNativeFeedback>
     </View>
   );
 };
@@ -41,9 +56,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 15,
     borderTopLeftRadius: 0,
-    padding: 10,
     margin: 10,
-    justifyContent: 'space-evenly',
+    overflow: 'hidden',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

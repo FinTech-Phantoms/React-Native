@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import ActiveSubscriptionsScreen from '../screens/subscriptions/ActiveSubscriptionsScreen';
 import SubscriptionManagementScreen from '../screens/subscriptions/SubscriptionManagementScreen';
 import colors from '../../assests/colors';
+import SubscriptionDetails from '../screens/subscriptions/SubscriptionDetails';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,10 @@ const SubscriptionsNavigator = () => {
       <Stack.Screen
         name="my-active-subscriptions"
         component={ActiveSubscriptionsScreen}
+      />
+      <Stack.Screen
+        name="subscription-details"
+        component={SubscriptionDetails}
       />
     </Stack.Navigator>
   );

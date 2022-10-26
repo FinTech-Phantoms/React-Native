@@ -47,6 +47,11 @@ const SubscriptionsCard = () => {
           // numColumns={2}
           renderItem={({item}) => <PlanContainer />}
           horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            justifyContent: 'flex-start',
+            // backgroundColor: 'red',
+          }}
         />
       </View>
     </View>
@@ -61,12 +66,12 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderTopLeftRadius: 0,
     padding: 10,
-    paddingBottom: 0,
+    paddingBottom: 10,
   },
   topRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 30,
+    marginBottom: 20,
     justifyContent: 'space-between',
   },
   activeContainer: {

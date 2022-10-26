@@ -23,12 +23,13 @@ const TrackExpenseScreen = () => {
           ? colors.darkbackground
           : colors.lightbackground,
         flex: 1,
-        alignItems: 'center',
+        // alignItems: 'center',
       }}>
       <FlatList
         data={data}
         numColumns={2}
         renderItem={({item}) => <MoneyCard />}
+        contentContainerStyle={{alignItems: 'center'}}
       />
     </View>
   );
