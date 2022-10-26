@@ -153,6 +153,24 @@ const ActiveSubscriptionsScreen = () => {
         flex: 1,
         justifyContent: 'center',
       }}>
+      <View
+        style={{
+          // backgroundColor: '#ccc',
+          borderBottomWidth: StyleSheet.hairlineWidth,
+          height: 50,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        <Text
+          style={{
+            fontSize: 25,
+            fontWeight: '500',
+            textAlign: 'center',
+            color: 'darkred',
+          }}>
+          Total: $90.99
+        </Text>
+      </View>
       <FlatList
         data={data}
         renderItem={({item}) => (
