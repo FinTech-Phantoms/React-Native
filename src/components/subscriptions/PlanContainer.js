@@ -36,8 +36,8 @@ const PlanContainer = () => {
 
 const styles = StyleSheet.create({
   rootContainer: {
-    height: 150,
-    width: 145,
+    height: 200,
+    width: 200,
     backgroundColor: 'white',
     borderRadius: 15,
     borderTopLeftRadius: 0,
