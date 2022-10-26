@@ -121,6 +121,7 @@ const SubsContainer = ({bgColor, logo, price, timeLeft, id}) => {
         navigation.navigate('subscription-details', {
           sub_id: id,
           action: 'modify',
+          title: 'Spotify',
         });
       }}>
       <View

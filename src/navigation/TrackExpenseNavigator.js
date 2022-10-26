@@ -22,6 +22,7 @@ const TrackExpenseNavigator = () => {
         headerTitleStyle: {
           color: isDarkMode ? colors.darkText : colors.lightText,
         },
+        headerTitleAlign: 'center',
       }}>
       <Stack.Screen
         name="track-expense-home"

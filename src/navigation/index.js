@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import TabNavigator from './TabNavigator';
 import CreateNewExpenseScreen from '../screens/CreateNewExpenseScreen';
 import colors from '../../assests/colors';
+import ModifySubscription from '../screens/subscriptions/ModifySubscription';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ const MainNavigator = () => {
           headerTitleStyle: {
             color: isDarkMode ? colors.darkText : colors.lightText,
           },
+          headerTitleAlign: 'center',
         }}>
         <Stack.Screen
           name="home"
@@ -33,6 +35,10 @@ const MainNavigator = () => {
         <Stack.Screen
           name="create-new-expense"
           component={CreateNewExpenseScreen}
+        />
+        <Stack.Screen
+          name="modify-subscription"
+          component={ModifySubscription}
         />
       </Stack.Navigator>
     </NavigationContainer>

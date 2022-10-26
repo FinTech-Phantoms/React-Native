@@ -21,6 +21,7 @@ const SubscriptionsNavigator = () => {
         headerTitleStyle: {
           color: isDarkMode ? colors.darkText : colors.lightText,
         },
+        headerTitleAlign: 'center',
       }}>
       <Stack.Screen
         name="subscriptions-home"

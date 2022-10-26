@@ -31,6 +31,7 @@ const TabNavigator = () => {
         tabBarInactiveTintColor: isDarkMode
           ? colors.darkText
           : colors.lightText,
+        headerTitleAlign: 'center',
       }}>
       <BottomTab.Screen name="credits" component={CreditScoreScreen} />
       <BottomTab.Screen name="pending-bills" component={PendingBillsScreen} />
