@@ -1,10 +1,11 @@
 import React from 'react';
 import {useColorScheme} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import ActiveSubscriptionsScreen from '../screens/subscriptions/ActiveSubscriptionsScreen';
+import ActiveSubscriptionsScreen from '../screens/subscriptions/AllSubscriptions';
 import SubscriptionManagementScreen from '../screens/subscriptions/SubscriptionManagementScreen';
 import colors from '../../assests/colors';
 import SubscriptionDetails from '../screens/subscriptions/SubscriptionDetails';
+import AddSubscriptionDetailsScreen from '../screens/subscriptions/AddSubscriptionDetails';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,12 +29,16 @@ const SubscriptionsNavigator = () => {
         component={SubscriptionManagementScreen}
       />
       <Stack.Screen
-        name="my-active-subscriptions"
+        name="all-subscriptions"
         component={ActiveSubscriptionsScreen}
       />
       <Stack.Screen
         name="subscription-details"
         component={SubscriptionDetails}
+      />
+      <Stack.Screen
+        name="add-subscription-details"
+        component={AddSubscriptionDetailsScreen}
       />
     </Stack.Navigator>
   );

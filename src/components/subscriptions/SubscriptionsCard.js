@@ -32,7 +32,10 @@ const SubscriptionsCard = () => {
           name="arrow-up-right"
           size={25}
           onPress={() => {
-            navigation.navigate('my-active-subscriptions');
+            navigation.navigate('all-subscriptions', {
+              title: 'Active Subscriptions',
+              action: 'active-subscriptions',
+            });
           }}
         />
       </View>

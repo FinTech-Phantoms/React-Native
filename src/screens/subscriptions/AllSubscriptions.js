@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   StyleSheet,
@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import colors from '../../../assests/colors';
 import spotify from '../../../assests/spotify.png';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 var data = [
   {
     id: 1,
@@ -112,16 +112,28 @@ var data = [
   },
 ];
 
-const SubsContainer = ({bgColor, logo, price, timeLeft, id}) => {
+const SubsContainer = ({
+  bgColor,
+  logo,
+  price,
+  timeLeft,
+  id,
+  isActiveSubsScreen,
+}) => {
   const navigation = useNavigation();
   return (
     <TouchableNativeFeedback
       onPress={() => {
-        navigation.navigate('subscription-details', {
-          sub_id: id,
-          action: 'modify',
-          title: 'Spotify',
-        });
+        navigation.navigate(
+          isActiveSubsScreen
+            ? 'subscription-details'
+            : 'add-subscription-details',
+          {
+            sub_id: id,
+            action: isActiveSubsScreen ? 'modify' : 'add',
+            title: 'Spotify',
+          },
+        );
       }}>
       <View
         style={[
@@ -143,6 +155,20 @@ const SubsContainer = ({bgColor, logo, price, timeLeft, id}) => {
 };
 const ActiveSubscriptionsScreen = () => {
   var isDarkMode = useColorScheme() === 'dark';
+  const navigation = useNavigation();
+  const router = useRoute();
+
+  const [isActiveSubsScreen, setIsActiveSubsScreen] = useState(false);
+  useEffect(() => {
+    navigation.setOptions({
+      headerTitle: router.params?.title,
+    });
+    if (router.params?.action === 'active-subscriptions') {
+      setIsActiveSubsScreen(true);
+    } else {
+      setIsActiveSubsScreen(false);
+    }
+  }, [navigation, router.params]);
   return (
     <View
       style={{
@@ -152,24 +178,26 @@ const ActiveSubscriptionsScreen = () => {
         flex: 1,
         justifyContent: 'center',
       }}>
-      <View
-        style={{
-          // backgroundColor: '#ccc',
-          borderBottomWidth: StyleSheet.hairlineWidth,
-          height: 50,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <Text
+      {isActiveSubsScreen && (
+        <View
           style={{
-            fontSize: 25,
-            fontWeight: '500',
-            textAlign: 'center',
-            color: 'darkred',
+            // backgroundColor: '#ccc',
+            borderBottomWidth: StyleSheet.hairlineWidth,
+            height: 50,
+            alignItems: 'center',
+            justifyContent: 'center',
           }}>
-          Total: $90.99
-        </Text>
-      </View>
+          <Text
+            style={{
+              fontSize: 25,
+              fontWeight: '500',
+              textAlign: 'center',
+              color: 'darkred',
+            }}>
+            Total: $90.99
+          </Text>
+        </View>
+      )}
       <FlatList
         data={data}
         renderItem={({item}) => (
@@ -179,6 +207,7 @@ const ActiveSubscriptionsScreen = () => {
             timeLeft={item.timeLeft}
             logo={item.logo}
             id={item.id}
+            isActiveSubsScreen={isActiveSubsScreen}
           />
         )}
         // numColumns={2}
