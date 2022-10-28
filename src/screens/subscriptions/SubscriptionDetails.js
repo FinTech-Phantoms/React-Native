@@ -51,7 +51,12 @@ const SubscriptionDetails = () => {
         );
       },
     });
-  }, []);
+  }, [
+    navigation,
+    router.params?.title,
+    router.params?.sub_id,
+    router.params?.action,
+  ]);
   return (
     <View
       style={{
