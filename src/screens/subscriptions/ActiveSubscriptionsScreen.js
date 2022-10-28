@@ -9,7 +9,6 @@ import {
   TouchableNativeFeedback,
 } from 'react-native';
 import colors from '../../../assests/colors';
-import PlanContainer from '../../components/subscriptions/PlanContainer';
 import spotify from '../../../assests/spotify.png';
 import {useNavigation} from '@react-navigation/native';
 var data = [

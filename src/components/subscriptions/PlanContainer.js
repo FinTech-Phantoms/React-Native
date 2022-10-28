@@ -6,11 +6,21 @@ import {
   Text,
   TouchableNativeFeedback,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
-const PlanContainer = () => {
+const PlanContainer = ({id}) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.rootContainer}>
-      <TouchableNativeFeedback style={{overflow: 'hidden'}}>
+      <TouchableNativeFeedback
+        style={{overflow: 'hidden'}}
+        onPress={() => {
+          navigation.navigate('subscription-details', {
+            sub_id: id,
+            action: 'modify',
+            title: 'Spotify',
+          });
+        }}>
         <View
           style={{
             flex: 1,

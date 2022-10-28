@@ -1,12 +1,7 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Text,
-  Image,
-  ScrollView,
-  FlatList,
-} from 'react-native';
+import {View, StyleSheet, Text, FlatList} from 'react-native';
 import PlanContainer from './PlanContainer';
 import Feather from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
@@ -44,13 +39,11 @@ const SubscriptionsCard = () => {
       <View style={styles.bottomRow}>
         <FlatList
           data={data}
-          // numColumns={2}
-          renderItem={({item}) => <PlanContainer />}
+          renderItem={({item}) => <PlanContainer id={item.id} />}
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
             justifyContent: 'flex-start',
-            // backgroundColor: 'red',
           }}
         />
       </View>
