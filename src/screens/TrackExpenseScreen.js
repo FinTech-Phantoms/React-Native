@@ -28,7 +28,7 @@ const TrackExpenseScreen = () => {
       <FlatList
         data={data}
         numColumns={2}
-        renderItem={({item}) => <MoneyCard />}
+        renderItem={({item}) => <MoneyCard id={`${item.id}`} />}
         contentContainerStyle={{alignItems: 'center'}}
       />
     </View>

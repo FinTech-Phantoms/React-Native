@@ -3,9 +3,10 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import TrackExpenseScreen from '../screens/TrackExpenseScreen';
 import {useNavigation} from '@react-navigation/native';
 import Entypo from 'react-native-vector-icons/Entypo';
-import ExpenseDetailsScreen from '../screens/ExpenseDetailsScreen';
+import ExpenseDetailsScreen from '../screens/expense/ExpenseDetailsScreen';
 import {useColorScheme} from 'react-native';
 import colors from '../../assests/colors';
+import EditExpense from '../screens/expense/EditExpense';
 
 const Stack = createNativeStackNavigator();
 const TrackExpenseNavigator = () => {
@@ -45,6 +46,7 @@ const TrackExpenseNavigator = () => {
         name="view-expense-details"
         component={ExpenseDetailsScreen}
       />
+      <Stack.Screen name="edit-expense" component={EditExpense} />
     </Stack.Navigator>
   );
 };

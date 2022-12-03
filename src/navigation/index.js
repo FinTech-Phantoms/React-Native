@@ -3,7 +3,7 @@ import {View, StyleSheet, Text, useColorScheme, StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import TabNavigator from './TabNavigator';
-import CreateNewExpenseScreen from '../screens/CreateNewExpenseScreen';
+import CreateNewExpenseScreen from '../screens/expense/CreateNewExpenseScreen';
 import colors from '../../assests/colors';
 import ModifySubscription from '../screens/subscriptions/ModifySubscription';
 

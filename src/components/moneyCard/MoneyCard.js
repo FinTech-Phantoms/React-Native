@@ -10,7 +10,7 @@ import colors from '../../../assests/colors';
 import {useColorScheme} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-const MoneyCard = () => {
+const MoneyCard = ({id}) => {
   var isDarkMode = useColorScheme() === 'dark';
   const navigation = useNavigation();
   return (
@@ -37,7 +37,10 @@ const MoneyCard = () => {
       <View style={{flex: 0.3, overflow: 'hidden'}}>
         <TouchableNativeFeedback
           onPress={() => {
-            navigation.navigate('view-expense-details');
+            navigation.navigate('view-expense-details', {
+              id,
+              title: 'Title of expense',
+            });
           }}
           background={TouchableNativeFeedback.Ripple(
             isDarkMode ? '#3b3939' : 'whitesmoke',
