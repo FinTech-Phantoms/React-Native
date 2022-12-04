@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {View, StyleSheet, Text, ScrollView, TextInput} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Feather from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
 const CreateNewExpenseScreen = () => {
   const [title, setTitle] = useState('');
@@ -22,6 +23,19 @@ const CreateNewExpenseScreen = () => {
   ]);
 
   const navigation = useNavigation();
+  navigation.setOptions({
+    headerTitle: 'Add Expense',
+    headerRight: () => (
+      <Feather
+        name="check"
+        size={22}
+        color={'royalblue'}
+        onPress={() => {
+          console.warn('save');
+        }}
+      />
+    ),
+  });
   const handleAddNew = () => {
     console.warn(spendingsList.length);
     setSpendingsList(prev => {
